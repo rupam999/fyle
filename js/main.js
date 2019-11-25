@@ -166,15 +166,19 @@ var citySearch = debounce(function() {
 }, 1000);
 
 
-var citySearchMain = debounce(function(searchName) {
+var citySearchMain = function(searchName) {
     console.log(searchName);
     // let searchCityValue = document.getElementById("cityFilter").value;
     searchName = searchName.toUpperCase();
+    document.getElementById("myTextBox").disabled = true;
     document.getElementById("pageSize").disabled = true;
+    document.getElementById("contents").innerHTML = "Waiting for data";
     // console.log('again data button');
     getData(searchName);
+    // dataRecieved();
+    // getData(searchName);
     dataRecieved();
-}, 1000);
+}
 
 
 
